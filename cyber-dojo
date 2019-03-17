@@ -162,7 +162,7 @@ handle_sh_locally()
   fi
 
   local arg=$2
-  local name=cyber-dojo-${arg}
+  local name=khacnhat-${arg}
   if running_container "${name}"; then
     echo "shelling into ${name}"
     local cmd="export PS1='[cyber-dojo sh ${arg}] \\w $ ';sh"

@@ -44,7 +44,7 @@ def show(lines); lines.each { |line| puts line }; print "\n"; end
 
 def quoted(s); '"' + s + '"'; end
 
-def cyber_dojo_commander; "cyberdojo/commander"; end
+def cyber_dojo_commander; "khacnhat/commander-dojo"; end
 
 def read_only; 'ro'; end
 
