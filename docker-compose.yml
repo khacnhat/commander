@@ -23,7 +23,7 @@ services:
 
   nginx:
     user: root
-    image: cyberdojo/nginx
+    image: khacnhat/nginx-dojo
     init: true
     container_name: cyber-dojo-nginx
     cpu_shares: 1024
@@ -42,7 +42,7 @@ services:
 
   web:
     user: nobody
-    image: cyberdojo/web
+    image: khacnhat/web-dojo
     init: true
     container_name: cyber-dojo-web
     cpu_shares: 1024
@@ -83,7 +83,7 @@ services:
 
   runner:
     user: root
-    image: cyberdojo/runner-stateless
+    image: khacnhat/runner-dojo
     init: true
     container_name: cyber-dojo-runner
     cpu_shares:  1024
@@ -100,7 +100,7 @@ services:
 
   saver:
     user: saver
-    image: cyberdojo/saver
+    image: khacnhat/saver-dojo
     init: true
     container_name: cyber-dojo-saver
     read_only: true
@@ -117,7 +117,7 @@ services:
 
   mapper:
     user: nobody
-    image: cyberdojo/mapper
+    image: khacnhat/mapper-dojo
     init: true
     container_name: cyber-dojo-mapper
     read_only: true
@@ -134,7 +134,7 @@ services:
 
   differ:
     user: nobody
-    image: cyberdojo/differ
+    image: khacnhat/differ-dojo
     init: true
     container_name: cyber-dojo-differ
     cpu_shares: 512
@@ -149,7 +149,7 @@ services:
 
   zipper:
     user: nobody
-    image: cyberdojo/zipper
+    image: khacnhat/zipper-dojo
     init: true
     container_name: cyber-dojo-zipper
     cpu_shares: 256
@@ -167,13 +167,13 @@ services:
   # monitoring
 
   prometheus:
-    image: cyberdojo/prometheus
+    image: khacnhat/prometheus-dojo
     init: true
     container_name: cyber-dojo-prometheus
     cpu_shares: 128
 
   grafana:
-    image: cyberdojo/grafana
+    image: khacnhat/grafana-dojo
     init: true
     container_name: cyber-dojo-grafana
     cpu_shares: 128

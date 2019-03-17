@@ -37,7 +37,7 @@
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 readonly my_dir="$( cd "$( dirname "$0" )" && pwd )"
-readonly cyber_dojo_commander=cyberdojo/commander
+readonly cyber_dojo_commander=khacnhat/commander-dojo
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
