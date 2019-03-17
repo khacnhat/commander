@@ -25,7 +25,7 @@ services:
     user: root
     image: khacnhat/nginx-dojo
     init: true
-    container_name: cyber-dojo-nginx
+    container_name: khacnhat-nginx
     cpu_shares: 1024
     mem_limit: 50M
     memswap_limit: 50M
@@ -44,7 +44,7 @@ services:
     user: nobody
     image: khacnhat/web-dojo
     init: true
-    container_name: cyber-dojo-web
+    container_name: khacnhat-web
     cpu_shares: 1024
     mem_limit: 2G
     memswap_limit: 2G
@@ -64,9 +64,10 @@ services:
 
   starter:
     user: nobody
-    image: ${CYBER_DOJO_START_POINTS_IMAGE}
+#    image: ${CYBER_DOJO_START_POINTS_IMAGE}
+    image: khacnhat/starter-dojo
     init: true
-    container_name: cyber-dojo-starter
+    container_name: khacnhat-starter
     cpu_shares: 1024
     read_only: true
     tmpfs: /tmp
@@ -85,7 +86,7 @@ services:
     user: root
     image: khacnhat/runner-dojo
     init: true
-    container_name: cyber-dojo-runner
+    container_name: khacnhat-runner
     cpu_shares:  1024
     read_only: true
     tmpfs: /tmp
@@ -102,7 +103,7 @@ services:
     user: saver
     image: khacnhat/saver-dojo
     init: true
-    container_name: cyber-dojo-saver
+    container_name: khacnhat-saver
     read_only: true
     tmpfs: /tmp
     restart: on-failure
@@ -119,7 +120,7 @@ services:
     user: nobody
     image: khacnhat/mapper-dojo
     init: true
-    container_name: cyber-dojo-mapper
+    container_name: khacnhat-mapper
     read_only: true
     tmpfs: /tmp
     mem_limit: 32M
@@ -136,7 +137,7 @@ services:
     user: nobody
     image: khacnhat/differ-dojo
     init: true
-    container_name: cyber-dojo-differ
+    container_name: khacnhat-differ
     cpu_shares: 512
     read_only: true
     tmpfs: /tmp
@@ -151,7 +152,7 @@ services:
     user: nobody
     image: khacnhat/zipper-dojo
     init: true
-    container_name: cyber-dojo-zipper
+    container_name: khacnhat-zipper
     cpu_shares: 256
     read_only: true
     tmpfs: /tmp
@@ -169,13 +170,13 @@ services:
   prometheus:
     image: khacnhat/prometheus-dojo
     init: true
-    container_name: cyber-dojo-prometheus
+    container_name: khacnhat-prometheus
     cpu_shares: 128
 
   grafana:
     image: khacnhat/grafana-dojo
     init: true
-    container_name: cyber-dojo-grafana
+    container_name: khacnhat-grafana
     cpu_shares: 128
     volumes:
       - grafana_data:/var/lib/grafana
